@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.URLEncoder;
 import java.util.List;
 
 /**
@@ -121,8 +122,13 @@ public class ExcelUtil {
             if (!dbfFile.exists() || dbfFile.isDirectory()) {
                 dbfFile.createNewFile();
             }
-            fileName = new String(filePath.getBytes(), "ISO-8859-1");
-            response.addHeader("Content-Disposition", "filename=" + fileName);
+            /*
+             * 设置返回头
+             * */
+            response.setContentType("application/vnd.ms-excel");
+            response.setCharacterEncoding("utf-8");
+            String fileNameEncode = URLEncoder.encode(fileName, "UTF-8");
+            response.setHeader("Content-disposition", "attachment;filename=" + fileNameEncode + ".xlsx");
             return response.getOutputStream();
         } catch (IOException e) {
             throw new ExcelException("创建文件失败！");
