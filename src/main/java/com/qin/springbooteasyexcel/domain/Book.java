@@ -4,7 +4,7 @@ package com.qin.springbooteasyexcel.domain;
 *  date: 2019/12/2
 *  description:书籍实体类
 */
-public class book {
+public class Book {
     //书籍id
     private Integer bookId;
     //书籍编号

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qin.springbooteasyexcel.dao.bookMapper" >
+    <resultMap id="BaseResultMap" type="com.qin.springbooteasyexcel.domain.Book" >
+        <id column="book_id" property="bookId" jdbcType="INTEGER" />
+        <result column="book_number" property="bookNumber" jdbcType="INTEGER" />
+        <result column="book_name" property="bookName" jdbcType="VARCHAR" />
+        <result column="book_author" property="bookAuthor" jdbcType="VARCHAR" />
+        <result column="book_press" property="bookPress" jdbcType="VARCHAR" />
+        <result column="book_image_big" property="bookImageBig" jdbcType="VARCHAR" />
+        <result column="book_image_small" property="bookImageSmall" jdbcType="VARCHAR" />
+        <result column="book_classify_one" property="bookClassifyOne" jdbcType="VARCHAR" />
+        <result column="book_classify_two" property="bookClassifyTwo" jdbcType="VARCHAR" />
+        <result column="book_desc" property="bookDesc" jdbcType="LONGVARCHAR" />
+        <result column="book_address" property="bookAddress" jdbcType="VARCHAR" />
+        <result column="book_grade" property="bookGrade" jdbcType="DOUBLE" />
+        <result column="book_sum" property="bookSum" jdbcType="INTEGER" />
+        <result column="book_residue" property="bookResidue" jdbcType="INTEGER" />
+        <result column="book_borrow_num" property="bookBorrowNum" jdbcType="INTEGER" />
+        <result column="book_state" property="bookState" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="findAllBook" resultMap="BaseResultMap">
+        SELECT * FROM book
+    </select>
+
+
+</mapper>
