@@ -12,6 +12,6 @@ import java.util.List;
 *  description:书籍数据层接口
 */
 @Repository
-public interface bookMapper {
+public interface BookMapper {
     List<Book> findAllBook();
 }
