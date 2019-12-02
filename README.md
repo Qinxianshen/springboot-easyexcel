@@ -1,6 +1,6 @@
 # springboot-easyexcel
 
-### 基于springboot 与 easyexcel的导入导出 控制层 业务层 数据层
+### 基于springboot 与 easyexcel的导入导出 动态表头 控制层 业务层 数据层 
 
 ### 三层结构
 ![](./pic/4.png)
@@ -19,3 +19,7 @@
 
 ![](./pic/3.png)
 
+
+### 动态表头
+
+![](./pic/5.png)

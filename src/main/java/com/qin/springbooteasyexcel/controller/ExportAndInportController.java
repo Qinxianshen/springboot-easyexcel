@@ -35,5 +35,9 @@ public class ExportAndInportController {
         return  exportAndInportService.inportAllBook(excel,sheetNo,headLineNum);
     }
 
+    @GetMapping("/exportComplex")
+    public void exportAllComplex(HttpServletResponse response, String fileName, String sheetName){
+        exportAndInportService.exportAllComplex(response,fileName,sheetName);
+    }
 
 }

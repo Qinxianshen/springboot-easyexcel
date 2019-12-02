@@ -22,5 +22,9 @@ public interface ExportAndInportService {
     * */
     List<Object> inportAllBook(MultipartFile excel,int sheetNo, int headLineNum);
 
+    /*
+    * 导出所有复杂对象
+    * */
+    void exportAllComplex(HttpServletResponse response, String fileName, String sheetName);
 
 }
