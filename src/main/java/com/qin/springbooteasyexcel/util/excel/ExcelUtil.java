@@ -114,6 +114,10 @@ public class ExcelUtil {
     /**
      * 导出文件时为Writer生成OutputStream
      */
+    /* author:Qinzijing
+    *  date: 2019/12/2
+    *  description:此处修改了返回头 导出的bug
+    */
     private static OutputStream getOutputStream(String fileName, HttpServletResponse response) {
         //创建本地文件
         String filePath = fileName + ".xlsx";

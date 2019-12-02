@@ -5,12 +5,12 @@ package com.qin.springbooteasyexcel.controller;
 *  description:导入导出控制层
 */
 
+import com.github.pagehelper.PageHelper;
 import com.qin.springbooteasyexcel.domain.Book;
 import com.qin.springbooteasyexcel.service.ExportAndInportService;
 import com.qin.springbooteasyexcel.util.excel.ExcelUtil;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -28,5 +28,12 @@ public class ExportAndInportController {
     public void exportAllBook(HttpServletResponse response, String fileName, String sheetName) throws IOException {
         exportAndInportService.exportAllBook(response,fileName,sheetName);
     }
+
+    @PostMapping("/inportBook")
+    public List<Object> inportBook(MultipartFile excel, @RequestParam(defaultValue = "1")int sheetNo,
+                                 @RequestParam(defaultValue = "1") int headLineNum){
+        return  exportAndInportService.inportAllBook(excel,sheetNo,headLineNum);
+    }
+
 
 }

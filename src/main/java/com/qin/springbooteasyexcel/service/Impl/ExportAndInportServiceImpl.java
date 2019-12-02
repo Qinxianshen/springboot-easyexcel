@@ -7,6 +7,7 @@ import com.qin.springbooteasyexcel.service.ExportAndInportService;
 import com.qin.springbooteasyexcel.util.excel.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -26,11 +27,12 @@ public class ExportAndInportServiceImpl implements ExportAndInportService {
     @Override
     public void exportAllBook(HttpServletResponse response,String fileName,String sheetName) {
         List<Book> bookList = bookMapper.findAllBook();
+        System.out.println(bookList.size()+"----------------");
         ExcelUtil.writeExcel(response, bookList, fileName, sheetName, new Book());
     }
 
     @Override
-    public List<Book> inportAllBook() {
-        return null;
+    public List<Object> inportAllBook(MultipartFile excel,int sheetNo, int headLineNum) {
+        return ExcelUtil.readExcel(excel, new Book(), sheetNo, headLineNum);
     }
 }

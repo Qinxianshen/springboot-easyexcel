@@ -2,6 +2,7 @@ package com.qin.springbooteasyexcel.service;
 
 import com.qin.springbooteasyexcel.domain.Book;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -19,7 +20,7 @@ public interface ExportAndInportService {
     /*
     * 导入所有书籍
     * */
-    List<Book> inportAllBook();
+    List<Object> inportAllBook(MultipartFile excel,int sheetNo, int headLineNum);
 
 
 }
