@@ -22,18 +22,11 @@ public class ExportAndInportServiceImpl implements ExportAndInportService {
     @Autowired
     private BookMapper bookMapper;
 
-    public List<Book> exportAllBook(HttpServletResponse response) {
-        List<Book> bookList = bookMapper.findAllBook();
-        String fileName = "一个 Excel 文件";
-        String sheetName = "第一个 sheet";
-
-        ExcelUtil.writeExcel(response, bookList, fileName, sheetName, new Book());
-        return null;
-    }
 
     @Override
-    public List<Book> exportAllBook() {
-        return null;
+    public void exportAllBook(HttpServletResponse response,String fileName,String sheetName) {
+        List<Book> bookList = bookMapper.findAllBook();
+        ExcelUtil.writeExcel(response, bookList, fileName, sheetName, new Book());
     }
 
     @Override
