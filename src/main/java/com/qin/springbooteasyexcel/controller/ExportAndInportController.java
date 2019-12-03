@@ -40,4 +40,18 @@ public class ExportAndInportController {
         exportAndInportService.exportAllComplex(response,fileName,sheetName);
     }
 
+
+    /*
+    *
+    * 根据模板导出纵向数据
+    * */
+    @GetMapping("/exportQinComplex")
+    public void exportHorizonComplex(HttpServletResponse response, String fileName, String sheetName) throws IOException{
+        response.setContentType("application/vnd.ms-excel");
+        response.setCharacterEncoding("utf-8");
+        String fileNameEncode = URLEncoder.encode(fileName, "UTF-8");
+        response.setHeader("Content-disposition", "attachment;filename=" + fileNameEncode + ".xlsx");
+        exportAndInportService.exportHorizonComplex(fileName,sheetName);
+    }
+
 }

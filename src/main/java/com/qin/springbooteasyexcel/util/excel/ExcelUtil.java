@@ -1,11 +1,16 @@
 package com.qin.springbooteasyexcel.util.excel;
 
+import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
 import com.alibaba.excel.ExcelWriter;
+import com.alibaba.excel.enums.WriteDirectionEnum;
 import com.alibaba.excel.metadata.BaseRowModel;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.support.ExcelTypeEnum;
+import com.alibaba.excel.write.metadata.WriteSheet;
+import com.alibaba.excel.write.metadata.fill.FillConfig;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -92,6 +97,8 @@ public class ExcelUtil {
         writer.write(list, sheet);
         writer.finish();
     }
+
+
 
     /**
      * 导出 Excel ：多个 sheet，带表头

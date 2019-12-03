@@ -27,4 +27,8 @@ public interface ExportAndInportService {
     * */
     void exportAllComplex(HttpServletResponse response, String fileName, String sheetName);
 
+    /*
+    * 横向导出对象
+    * */
+    void exportHorizonComplex(String fileName, String sheetName);
 }
