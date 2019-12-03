@@ -3,9 +3,12 @@ package com.qin.springbooteasyexcel.domain;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 
+
+import java.util.List;
+
 /* author:Qinzijing
 *  date: 2019/12/2
-*  description:新版本下的实体类写法
+*  description:新版本下的实体类写法 组合
 */
 public class QinComplexObject {
     private String modelCnName;
@@ -21,23 +24,36 @@ public class QinComplexObject {
     private String mainIndex;
     private String modelLevel;
     private String modelexpression;
-    private String modeldependance;
-    private Integer id;
-    private Integer keys;
-    private String cnMark;
-    private String enMark;
-    private String type;
-    private String lenght;
-    private String unit;
-    private String defaut;
-    private String attributesExpression;
-    private String datasource;
-    private String datasourceText;
-    private String algorithmExpression;
-    private String function;
-    private String database;
-    private String databaseName;
-    private String storageCycle;
+    /*
+    * 以下是组合
+    * */
+    private DepenceModel depenceModel;
+    private List<Detail> details;
+    private StoageDatabase stoageDatabase;
+
+    public DepenceModel getDepenceModel() {
+        return depenceModel;
+    }
+
+    public void setDepenceModel(DepenceModel depenceModel) {
+        this.depenceModel = depenceModel;
+    }
+
+    public StoageDatabase getStoageDatabase() {
+        return stoageDatabase;
+    }
+
+    public void setStoageDatabase(StoageDatabase stoageDatabase) {
+        this.stoageDatabase = stoageDatabase;
+    }
+
+    public List<Detail> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<Detail> details) {
+        this.details = details;
+    }
 
     public String getModelCnName() {
         return modelCnName;
@@ -141,141 +157,5 @@ public class QinComplexObject {
 
     public void setModelexpression(String modelexpression) {
         this.modelexpression = modelexpression;
-    }
-
-    public String getModeldependance() {
-        return modeldependance;
-    }
-
-    public void setModeldependance(String modeldependance) {
-        this.modeldependance = modeldependance;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getKeys() {
-        return keys;
-    }
-
-    public void setKeys(Integer keys) {
-        this.keys = keys;
-    }
-
-    public String getCnMark() {
-        return cnMark;
-    }
-
-    public void setCnMark(String cnMark) {
-        this.cnMark = cnMark;
-    }
-
-    public String getEnMark() {
-        return enMark;
-    }
-
-    public void setEnMark(String enMark) {
-        this.enMark = enMark;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getLenght() {
-        return lenght;
-    }
-
-    public void setLenght(String lenght) {
-        this.lenght = lenght;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public String getDefaut() {
-        return defaut;
-    }
-
-    public void setDefaut(String defaut) {
-        this.defaut = defaut;
-    }
-
-    public String getAttributesExpression() {
-        return attributesExpression;
-    }
-
-    public void setAttributesExpression(String attributesExpression) {
-        this.attributesExpression = attributesExpression;
-    }
-
-    public String getDatasource() {
-        return datasource;
-    }
-
-    public void setDatasource(String datasource) {
-        this.datasource = datasource;
-    }
-
-    public String getDatasourceText() {
-        return datasourceText;
-    }
-
-    public void setDatasourceText(String datasourceText) {
-        this.datasourceText = datasourceText;
-    }
-
-    public String getAlgorithmExpression() {
-        return algorithmExpression;
-    }
-
-    public void setAlgorithmExpression(String algorithmExpression) {
-        this.algorithmExpression = algorithmExpression;
-    }
-
-    public String getFunction() {
-        return function;
-    }
-
-    public void setFunction(String function) {
-        this.function = function;
-    }
-
-    public String getDatabase() {
-        return database;
-    }
-
-    public void setDatabase(String database) {
-        this.database = database;
-    }
-
-    public String getDatabaseName() {
-        return databaseName;
-    }
-
-    public void setDatabaseName(String databaseName) {
-        this.databaseName = databaseName;
-    }
-
-    public String getStorageCycle() {
-        return storageCycle;
-    }
-
-    public void setStorageCycle(String storageCycle) {
-        this.storageCycle = storageCycle;
     }
 }

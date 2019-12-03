@@ -1,10 +1,13 @@
 package com.qin.springbooteasyexcel.service;
 
 import com.qin.springbooteasyexcel.domain.Book;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 /* author:Qinzijing
@@ -30,5 +33,5 @@ public interface ExportAndInportService {
     /*
     * 横向导出对象
     * */
-    void exportHorizonComplex(String fileName, String sheetName);
+    ResponseEntity<Resource> exportHorizonComplex(String fileName, String sheetName) throws IOException;
 }
