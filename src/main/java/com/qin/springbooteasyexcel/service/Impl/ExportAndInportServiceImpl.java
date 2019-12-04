@@ -94,7 +94,7 @@ public class ExportAndInportServiceImpl implements ExportAndInportService {
         //填充文件
         // 模板注意 用{} 来表示你要用的变量 如果本来就有"{","}" 特殊字符 用"\{","\}"代替
         // {} 代表普通变量 {.} 代表是list的变量
-        String templateFileName = "complexTemplate.xlsx";
+        String templateFileName = "complexTemplate2.xlsx";
         fileName = fileName+".xlsx";
         ExcelWriter excelWriter = EasyExcel.write(fileName).withTemplate(templateFileName).build();
         WriteSheet writeSheet = EasyExcel.writerSheet().build();
@@ -103,8 +103,8 @@ public class ExportAndInportServiceImpl implements ExportAndInportService {
         //横向写
         FillConfig fillConfig = FillConfig.builder().direction(WriteDirectionEnum.HORIZONTAL).build();
         excelWriter.fill(data1(), fillConfig, writeSheet);
-        excelWriter.fill(data2(),writeSheet);
-        excelWriter.fill(data3(),writeSheet);
+        excelWriter.fill(data2(),fillConfig,writeSheet);
+        excelWriter.fill(data3(),fillConfig,writeSheet);
         excelWriter.fill(data4(),writeSheet);
 
         // 别忘记关闭流
@@ -147,12 +147,16 @@ public class ExportAndInportServiceImpl implements ExportAndInportService {
         List<DepenceModel> depenceModels = new ArrayList<>();
         DepenceModel depenceModel1 = new DepenceModel();
         DepenceModel depenceModel2 = new DepenceModel();
+        DepenceModel depenceModel3 = new DepenceModel();
         depenceModel1.setModelEnName("Model 1");
         depenceModel1.setRelateDescription("这是一个相关描述一");
         depenceModel2.setModelEnName("Model 2");
         depenceModel2.setRelateDescription("这是一个相关描述二");
+        depenceModel3.setModelEnName("Model3");
+        depenceModel3.setRelateDescription("这是一个相关描述三");
         depenceModels.add(depenceModel1);
         depenceModels.add(depenceModel2);
+        depenceModels.add(depenceModel3);
         return depenceModels;
     }
     private List<Detail> data3(){

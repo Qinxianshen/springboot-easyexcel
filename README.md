@@ -28,3 +28,16 @@
 
 
 ![](./pic/6.png)
+
+
+### 复杂对象
+
+
+这个暂时无法用easyexcel做到 会出现上下覆盖的问题 具体看这个[issue](https://github.com/alibaba/easyexcel/issues/800)
+
+这个是用easypoi实现的
+
+代码请移步[这里](https://github.com/Qinxianshen/springboot-easypoi)
+
+
+![](./pic/7.png)
